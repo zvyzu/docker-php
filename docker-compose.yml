@@ -16,10 +16,11 @@ services:
       - db
     container_name: php
     restart: unless-stopped
-    build:
-      # Use the Dockerfile in the current directory
-      context: .
-      dockerfile: Dockerfile
+    image: vyzu/php:8.4-fpm-apache-debian
+    # build:
+    #   # Use the Dockerfile in the current directory
+    #   context: .
+    #   dockerfile: Dockerfile
     environment:
       PHP_DISPLAY_ERRORS: "1"
       PHP_POST_MAX_SIZE: "8192M"
